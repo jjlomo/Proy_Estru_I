@@ -2,6 +2,8 @@
 #include <iostream>
 #include "Contacto.h"
 #include "Nodo.h"
+#include <fstream>
+#include <sstream>
 using namespace std;
 
 class Lista{

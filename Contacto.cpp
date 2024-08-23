@@ -1,5 +1,5 @@
 #include "Contacto.h"
-Contacto::Contacto(int dni, string nombres, string apellidos, string direccion, int residencia, int telefono) {
+Contacto::Contacto(string dni, string nombres, string apellidos, string direccion, int residencia, int telefono) {
 	this->dni = dni;
 	this->nombres = nombres;
 	this->apellidos = apellidos;
@@ -9,7 +9,7 @@ Contacto::Contacto(int dni, string nombres, string apellidos, string direccion, 
 }
 
 Contacto::Contacto() {
-	this->dni = 0;
+	this->dni = "";
 	this->nombres = "";
 	this->apellidos = "";
 	this->direccion = "";
@@ -17,7 +17,7 @@ Contacto::Contacto() {
 	this->telefono = 0;
 }
 
-void Contacto::setDNI(int dni) {
+void Contacto::setDNI(string dni) {
 	this->dni = dni;
 }
 
@@ -41,7 +41,7 @@ void Contacto::setTelefono(int telefono) {
 	this->telefono = telefono;
 }
 
-int Contacto::getDNI() {
+string Contacto::getDNI() {
 	return dni;
 }
 

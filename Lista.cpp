@@ -99,6 +99,28 @@ int Lista::isEmpty(){
     }
 }
 
-void Lista::guardarArchivo()
-{
+void Lista::guardarArchivo(){
+    string nombreArchivo = "Agenda.txt";
+    ofstream archivo(nombreArchivo);
+    if (archivo.is_open()) {
+        Nodo* contador = *head;
+        while (contador!=NULL){
+            archivo << contador->getContacto()->getNombres()<<',';
+            archivo << contador->getContacto()->getApellidos() << ',';
+            archivo << contador->getContacto()->getDNI() << ',';
+            archivo << contador->getContacto()->getDireccion() << ',';
+            archivo << contador->getContacto()->getTelefono() << ',';
+            archivo << contador->getContacto()->getResidencia() << ','<<endl;
+            contador=contador->getNext();
+        }
+        archivo.close();
+    }
+    else {
+        cerr << "Error al abrir el archivo." << endl;
+    }
+}
+
+void Lista::cargarArchivo(){
+    string nombreArchivo = "Agenda.txt";
+    ifstream archivo(nombreArchivo);
 }

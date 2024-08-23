@@ -19,12 +19,14 @@ int main()
 	cout << "1. Agregar Contacto\n";
 	cout << "2. Editar Contacto\n";
 	cout << "3. Eliminar Contacto\n";
-	cout << "4. Buscar Contacto\n\n";
-	cout << "5. Salir\n";
+	cout << "4. Buscar Contacto\n";
+	cout << "5. Guardar Contactos\n";
+	cout << "6. Cargar Contactos\n\n";
+	cout << "7. Salir\n";
 	cout << "Ingrese opción que desea efectuar. :)\n";
 	int opcion ;
 	cin >> opcion;
-	unsigned int dni = 0;
+	string dni = "";
 	string nombres = "";
 	string apellidos = "";
 	string direccion = "";
@@ -33,16 +35,14 @@ int main()
 	int logrado=0;
 	Lista agenda;
 	Contacto *p;
-	while (opcion!=5){
+	while (opcion!=7){
 		switch (opcion){
 		
 		case 1:
-
-			cout << "Ingrese su número de identificación: ";
-			cin >> dni;
-			cout << endl;
-
 			cin.ignore();
+			cout << "Ingrese su número de identificación: ";
+			getline(cin, dni);
+			cout << endl;
 
 			cout << "Ingrese sus nombres: ";
 			getline(cin, nombres);
@@ -82,7 +82,15 @@ int main()
 
 			break;//FIN DEL CASO 4
 
+		case 5:
+			agenda.guardarArchivo();
+			break;//FIN DEL CASO 5
+
 		case 6:
+
+			break;//FIN DEL CASO 6
+
+		case 8:
 			agenda.Impresion();
 			break;//FIN CASO 6
 
@@ -96,8 +104,10 @@ int main()
 		cout << "1. Agregar Contacto\n";
 		cout << "2. Editar Contacto\n";
 		cout << "3. Eliminar Contacto\n";
-		cout << "4. Buscar Contacto\n\n";
-		cout << "5. Salir\n";
+		cout << "4. Buscar Contacto\n";
+		cout << "5. Guardar Contactos\n";
+		cout << "6. Cargar Contactos\n\n";
+		cout << "7. Salir\n";
 		cout << "Ingrese opción que desea efectuar. :)\n";
 		cin >> opcion;
 
