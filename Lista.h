@@ -8,8 +8,6 @@ using namespace std;
 
 class Lista{
 	Nodo** head = new Nodo * ();
-	Nodo** fin = new Nodo* ();
-	Nodo** mid = new Nodo*();
 	int flag = 1;
 	int size = 0;
 	void mergeSort(Nodo* arr[], int left, int right);
@@ -18,10 +16,9 @@ public:
 	Lista();
 	void Insert(Contacto* persona);
 	void Impresion();
-	void Eliminar();
-	void Editar();
+	void Eliminar(string campo);
+	void Editar(string campo, int x);
 	Nodo* Busqueda(string campo);
-	int Member();
 	int isEmpty();
 	void guardarArchivo();
 	void cargarArchivo();
@@ -29,5 +26,6 @@ public:
 	void Bubble();
 	void MergeSort();
 	void setFlag(int f);
+	int getFlag();
 };
 

@@ -189,6 +189,69 @@ void Lista::Impresion(){
     }
 }
 
+void Lista::Eliminar(string campo){
+    Nodo* elim = Busqueda(campo);
+    if (elim!=nullptr){
+        if (elim->getPred() == NULL)
+        {
+            elim->getNext()->setPred(NULL);
+            *head = elim->getNext();
+            delete elim;
+        }
+        else if (elim->getNext() == NULL)
+        {
+            elim->getPred()->setNext(NULL);
+            delete elim;
+        }
+        else {
+            elim->getNext()->setPred(elim->getPred());
+            elim->getPred()->setNext(elim->getNext());
+            delete elim;
+        }
+        cout << "Nodo Eliminado con Éxito\n\n";
+    }
+    else {
+        cout << "Nodo no encontrado\n\n";
+    }
+    size--;
+}
+
+void Lista::Editar(string campo, int x) {
+    /*Nodo* edit;
+    edit = Busqueda(campo);
+    if (edit!=nullptr){
+        switch (x)
+        {
+        case 1:
+            cout << "Ingrese nuevo nombre: ";
+
+            break;
+
+        case 2:
+
+            break;
+
+        case 3:
+
+            break;
+
+        case 4:
+
+            break;
+
+        case 5:
+
+            break;
+
+        case 7:
+
+            break;
+        default:
+            break;
+        }
+    }*/
+}
+
 Nodo* Lista::Busqueda(string campo) {
     if (*head != NULL) {
         Nodo* contador = *head;
@@ -198,108 +261,87 @@ Nodo* Lista::Busqueda(string campo) {
     switch (flag)
     {
     case 1: 
-        /*Nodo* contador = *head;
-        Nodo** arreglo = new Nodo * [size];*/
         for (int i = 0; i < size; i++)
         {
             arreglo[i] = contador;
             contador = contador->getNext();
         }
-        /*int izquierda = 0;
-        int derecha = size - 1;*/
         while (izquierda <= derecha) {
             int medio = izquierda + (derecha - izquierda) / 2;
 
-            // Verificar si el objetivo está en el medio
             if (to_string(arreglo[medio]->getContacto()->getTelefono()) == campo) {
-                return arreglo[medio]; // Encontrado
+                return arreglo[medio]; 
             }
 
-            // Si el objetivo es mayor que el elemento medio, buscar en la mitad derecha
             if (to_string(arreglo[medio]->getContacto()->getTelefono()) < campo) {
                 izquierda = medio + 1;
             }
             else {
-                // Si el objetivo es menor que el elemento medio, buscar en la mitad izquierda
                 derecha = medio - 1;
             }
         }
 
-        // Si llegamos aquí, el objetivo no está en el array
         return nullptr;
 
         break;
 
     case 2:
-        /*Nodo * contador = *head;
-        Nodo** arreglo = new Nodo * [size];*/
         for (int i = 0; i < size; i++)
         {
             arreglo[i] = contador;
             contador = contador->getNext();
         }
-        /*int izquierda = 0;
-        int derecha = size - 1;*/
         while (izquierda <= derecha) {
             int medio = izquierda + (derecha - izquierda) / 2;
 
-            // Verificar si el objetivo está en el medio
             if (arreglo[medio]->getContacto()->getDNI() == campo) {
-                return arreglo[medio]; // Encontrado
+                return arreglo[medio]; 
             }
 
-            // Si el objetivo es mayor que el elemento medio, buscar en la mitad derecha
             if (arreglo[medio]->getContacto()->getDNI() < campo) {
                 izquierda = medio + 1;
             }
             else {
-                // Si el objetivo es menor que el elemento medio, buscar en la mitad izquierda
                 derecha = medio - 1;
             }
         }
 
-        // Si llegamos aquí, el objetivo no está en el array
         return nullptr;
 
         break;
 
     case 3:
-        /*Nodo * contador = *head;
-        Nodo** arreglo = new Nodo * [size];*/
         for (int i = 0; i < size; i++)
         {
             arreglo[i] = contador;
             contador = contador->getNext();
         }
-        /*int izquierda = 0;
-        int derecha = size - 1;*/
         while (izquierda <= derecha) {
             int medio = izquierda + (derecha - izquierda) / 2;
 
-            // Verificar si el objetivo está en el medio
             if (arreglo[medio]->getContacto()->getApellidos() == campo) {
-                return arreglo[medio]; // Encontrado
+                return arreglo[medio]; 
             }
 
-            // Si el objetivo es mayor que el elemento medio, buscar en la mitad derecha
             if (arreglo[medio]->getContacto()->getApellidos() < campo) {
                 izquierda = medio + 1;
             }
             else {
-                // Si el objetivo es menor que el elemento medio, buscar en la mitad izquierda
                 derecha = medio - 1;
             }
         }
 
-        // Si llegamos aquí, el objetivo no está en el array
         return nullptr;
 
         break;
+
+        delete[] arreglo;
     }
     }
     else {
         cout << "Lista vacía\n\n";
     }
+    return nullptr;
 }
 
 int Lista::isEmpty(){
@@ -345,7 +387,7 @@ void Lista::cargarArchivo(){
     int telefono = 0;
     if (archivo.is_open()) {
         while (getline(archivo, linea, ',')) {
-            if (campo==1){
+            if (campo==1) {
                 nombres = linea;
                 campo++;
             }
@@ -425,10 +467,6 @@ void Lista::Bubble(){
                 curr->setNext(siguiente);
                 curr->getNext()->setPred(curr);
                 curr = curr->getNext();
-                if (i == mid)
-                {
-                    *fin = curr;
-                }
             }
             
         }
@@ -563,4 +601,9 @@ void Lista::MergeSort(){
 
 void Lista::setFlag(int f){
     flag = f;
+}
+
+int Lista::getFlag()
+{
+    return flag;
 }
