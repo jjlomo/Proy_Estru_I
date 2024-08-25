@@ -8,6 +8,10 @@ Contacto* Nodo::getContacto() {
 	return persona;
 }
 
+Nodo::Nodo(){
+	persona = new Contacto();
+}
+
 Nodo* Nodo::getNext() {
 	return next;
 }

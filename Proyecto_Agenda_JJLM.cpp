@@ -1,9 +1,54 @@
 ﻿#include <iostream>
 #include <string>
 #include <locale>
+#include <cctype>
 #include "Contacto.h"
 #include "Lista.h"
 using namespace std;
+
+bool entrada_num_valida(string entrada) {
+	for (char c : entrada) {
+		if (!isdigit(c)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool nombre_valido(string nombres) {
+	for (char c : nombres) {
+		if (isdigit(c)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool num_valido(string movil) {
+	if (movil.length()!=8)
+	{
+		return false;
+	}
+	for (char c : movil) {
+		if (!isdigit(c)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool dni_valido(string dni) {
+	if (dni.length() != 13)
+	{
+		return false;
+	}
+	for (char c : dni) {
+		if (!isdigit(c)) {
+			return false;
+		}
+	}
+	return true;
+}
 
 int main()
 {
@@ -13,7 +58,7 @@ int main()
 	cout << "Aquí, te proporcionaremos todas las herramientas y el apoyo que necesitas para alcanzar tus objetivos.\nNo dudes en explorar todas las funciones y recursos disponibles.\nEstamos aquí para ayudarte en cada paso del camino.\n\n";
 	cout << "¿Comenzamos? :D\n\n\n";
 	//FIN BIENVENIDA
-
+	Lista agenda;
 
 	cout << "|°|°|°|°|°|°|°|°|~MENÚ~|°|°|°|°|°|°|°|°|\n\n";
 	cout << "1. Agregar Contacto\n";
@@ -22,52 +67,108 @@ int main()
 	cout << "4. Buscar Contacto\n";
 	cout << "5. Guardar Contactos\n";
 	cout << "6. Cargar Contactos\n\n";
-	cout << "7. Salir\n";
+	cout << "7. Salir\n\n";
+	cout << "Contactos guardados actualmente: " << agenda.getSize()<<"\n\n";
 	cout << "Ingrese opción que desea efectuar. :)\n";
 	int opcion ;
-	cin >> opcion;
+	string e;
+	getline(cin, e);
+	bool c = entrada_num_valida(e);
+	while (!c)
+	{
+		cout << "Entrada debe ser un número entero, intente nuevamente. :(\n";
+		cout << "Ingrese opción que desea efectuar. :)\n";
+		getline(cin, e);
+		c = entrada_num_valida(e);
+	}
+	opcion = stoi(e);
 	string dni = "";
 	string nombres = "";
 	string apellidos = "";
 	string direccion = "";
+	string x = "";
 	unsigned int residencia = 0;
 	unsigned int telefono = 0;
-	int logrado=0;
-	Lista agenda;
+	bool valido;
 	Contacto *p;
+	Nodo* wanted;
 	while (opcion!=7){
 		switch (opcion){
 		
 		case 1:
-			cin.ignore();
-			cout << "Ingrese su número de identificación: ";
-			getline(cin, dni);
+			cout << "Ingrese su número de identificación (Los 13 dígitos sin espacios ni guiones): ";
+			getline(cin, x);
+			valido = dni_valido(x);
+			while (!valido)
+			{
+				cout << "Formato de DNI no permitido, intente nuevamente. :(\n";
+				cout << "Ingrese su número de identificación (Los 13 dígitos sin espacios ni guiones): ";
+				getline(cin, x);
+				valido = dni_valido(x);
+			}
+			dni = x;
 			cout << endl;
 
 			cout << "Ingrese sus nombres: ";
-			getline(cin, nombres);
+			getline(cin, e);
+			valido = nombre_valido(e);
+			while (!valido)
+			{
+				cout << "Formato de nombre no permitido, intente nuevamente. :(\n";
+				cout << "Ingrese sus nombres: ";
+				getline(cin, e);
+				valido = nombre_valido(e);
+			}
+			nombres = e;
 			cout << endl;
 
 			cout << "Ingrese sus apellidos: ";
-			getline(cin, apellidos);
+			getline(cin, x);
+			valido = nombre_valido(x);
+			while (!valido)
+			{
+				cout << "Formato de apellido no permitido, intente nuevamente. :(\n";
+				cout << "Ingrese sus apellidos: ";
+				getline(cin, x);
+				valido = nombre_valido(x);
+			}
+			apellidos = x;
 			cout << endl;
 
 			cout << "Ingrese su dirección: ";
 			getline(cin, direccion);
 			cout << endl;
 
-			cout << "Ingrese su número de teléfono residencial: ";
-			cin >> residencia;
+			cout << "Ingrese su número de teléfono residencial (Los 8 dígitos sin espacios ni guiones): ";
+			getline(cin, x);
+			valido = num_valido(x);
+			while (!valido)
+			{
+				cout << "Formato de teléfono residencial no permitido, intente nuevamente. :(\n";
+				cout << "Ingrese su número de teléfono residencial (Los 8 dígitos sin espacios ni guiones): ";
+				getline(cin, x);
+				valido = num_valido(x);
+			}
+			residencia = stoi(x);
 			cout << endl;
 
-			cout << "Ingrese su número de teléfono movil: ";
-			cin >> telefono;
+			cout << "Ingrese su número de teléfono movil (Los 8 dígitos sin espacios ni guiones): ";
+			getline(cin, x);
+			valido = num_valido(x);
+			while (!valido)
+			{
+				cout << "Formato de teléfono móvil no permitido, intente nuevamente.\n";
+				cout << "Ingrese su número de teléfono movil (Los 8 dígitos sin espacios ni guiones): ";
+				getline(cin, x);
+				valido = num_valido(x);
+			}
+			telefono = stoi(x);
 			cout << endl;
 
 			p = new Contacto(dni, nombres, apellidos, direccion, residencia, telefono);
 
 			agenda.Insert(p);
-			
+
 			break;//FIN DEL CASO 1
 
 		case 2:
@@ -79,7 +180,141 @@ int main()
 			break;//FIN DEL CASO 3
 
 		case 4:
+			cout << "1. Teléfono\n";
+			cout << "2. DNI\n";
+			cout << "3. Apellidos\n\n";
+			cout << "4. Salir\n";
+			cout << "Decida cuál campo usará para buscar.\n";
+			cout << "Cabe recalcar que el campo el cual elija será el nuevo criterio de ordenamiento por el cual estará regida la agenda\n\n";
+			cout << "Campo a seleccionar: ";
+			int buscar;
+			getline(cin, e);
+			c = entrada_num_valida(e);
+			while (!c)
+			{
+				cout << "Entrada debe ser un número entero, intente nuevamente. :(\n";
+				cout << "Ingrese opción que desea efectuar. :)\n";
+				getline(cin, e);
+				c = entrada_num_valida(e);
+			}
+			buscar = stoi(e);
+			while (buscar!=4)
+			{
+				if (buscar==1)
+				{
+					agenda.setFlag(1);
+					agenda.MergeSort();
+					cout << "Ingrese el número de teléfono movil de la persona a buscar.(Los 8 dígitos sin espacios ni guiones):\n ";
+					cout << "Al tratarse de una búsqueda, sea preciso con el dato\n";
+					getline(cin, x);
+					valido = num_valido(x);
+					while (!valido)
+					{
+						cout << "Formato de teléfono móvil no permitido, intente nuevamente.\n";
+						cout << "Ingrese su número de teléfono movil (Los 8 dígitos sin espacios ni guiones):\n ";
+						cout << "Al tratarse de una búsqueda, sea preciso con el dato\n";
+						getline(cin, x);
+						valido = num_valido(x);
+					}
+					wanted=agenda.Busqueda(x);
 
+					if (wanted!=nullptr){
+						cout << "Nodo Encontrado Mediante el Número Ingresado\n\n";
+						cout << "Nombre: " << wanted->getContacto()->getNombres() << "\n";
+						cout << "Apellidos: " << wanted->getContacto()->getApellidos() << "\n";
+						cout << "DNI: " << wanted->getContacto()->getDNI() << "\n";
+						cout << "Dirección: " << wanted->getContacto()->getDireccion() << "\n";
+						cout << "Teléfono Móvil: " << wanted->getContacto()->getTelefono() << "\n";
+						cout << "Teléfono Residencial: " << wanted->getContacto()->getResidencia() << "\n\n";
+					}
+					else {
+						cout << "El número ingresado fue equivocado o no existe tal contacto registrado con ese número\n\n";
+					}
+					
+				}
+				else if(buscar == 3)
+				{
+					agenda.setFlag(3);
+					agenda.MergeSort();
+					cout << "Ingrese sus apellidos: ";
+					getline(cin, x);
+					valido = nombre_valido(x);
+					while (!valido)
+					{
+						cout << "Formato de apellido no permitido, intente nuevamente. :(\n";
+						cout << "Al tratarse de una búsqueda, sea preciso con el dato\n";
+						cout << "Ingrese sus apellidos: ";
+						getline(cin, x);
+						valido = nombre_valido(x);
+					}
+					wanted = agenda.Busqueda(x);
+
+					if (wanted != nullptr) {
+						cout << "Nodo Encontrado Mediante el DNI Ingresado\n\n";
+						cout << "Nombre: " << wanted->getContacto()->getNombres() << "\n";
+						cout << "Apellidos: " << wanted->getContacto()->getApellidos() << "\n";
+						cout << "DNI: " << wanted->getContacto()->getDNI() << "\n";
+						cout << "Dirección: " << wanted->getContacto()->getDireccion() << "\n";
+						cout << "Teléfono Móvil: " << wanted->getContacto()->getTelefono() << "\n";
+						cout << "Teléfono Residencial: " << wanted->getContacto()->getResidencia() << "\n\n";
+					}
+					else {
+						cout << "El DNI ingresado fue equivocado o no existe tal contacto registrado con ese DNI\n\n";
+					}
+				}
+				else if (buscar == 2)
+				{
+					agenda.Bubble();
+					cout << "Ingrese el número de identificación a buscar (Los 13 dígitos sin espacios ni guiones):\n ";
+					cout << "Al tratarse de una búsqueda, sea preciso con el dato\n";
+					getline(cin, x);
+					valido = dni_valido(x);
+					while (!valido)
+					{
+						cout << "Formato de DNI no permitido, intente nuevamente. :(\n";
+						cout << "Ingrese su número de identificación a buscar (Los 13 dígitos sin espacios ni guiones):\n ";
+						cout << "Al tratarse de una búsqueda, sea preciso con el dato\n";
+						getline(cin, x);
+						valido = dni_valido(x);
+					}
+					wanted = agenda.Busqueda(x);
+
+					if (wanted != nullptr) {
+						cout << "Nodo Encontrado Mediante los Apellidos Ingresados\n\n";
+						cout << "Nombre: " << wanted->getContacto()->getNombres() << "\n";
+						cout << "Apellidos: " << wanted->getContacto()->getApellidos() << "\n";
+						cout << "DNI: " << wanted->getContacto()->getDNI() << "\n";
+						cout << "Dirección: " << wanted->getContacto()->getDireccion() << "\n";
+						cout << "Teléfono Móvil: " << wanted->getContacto()->getTelefono() << "\n";
+						cout << "Teléfono Residencial: " << wanted->getContacto()->getResidencia() << "\n\n";
+					}
+					else {
+						cout << "El Apellido ingresado fue equivocado o no existe tal contacto registrado con esos Apellidos\n\n";
+					}
+				}
+				else {
+					cout << "Ya me cansé de decirte que elijas bien tu opción  D:<\n\n";
+				}
+
+
+				cout << "1. Teléfono\n";
+				cout << "2. DNI\n";
+				cout << "3. Apellidos\n\n";
+				cout << "4. Salir\n";
+				cout << "Decida cuál campo usará para buscar.\n";
+				cout << "Cabe recalcar que el campo el cual elija será el nuevo criterio de ordenamiento por el cual estará regida la agenda\n\n";
+				cout << "Campo a seleccionar: ";
+				getline(cin, e);
+				c = entrada_num_valida(e);
+				while (!c)
+				{
+					cout << "Entrada debe ser un número entero, intente nuevamente. :(\n";
+					cout << "Ingrese opción que desea efectuar. :)\n";
+					getline(cin, e);
+					c = entrada_num_valida(e);
+				}
+				buscar = stoi(e);
+			}
 			break;//FIN DEL CASO 4
 
 		case 5:
@@ -87,7 +322,7 @@ int main()
 			break;//FIN DEL CASO 5
 
 		case 6:
-
+			agenda.cargarArchivo();
 			break;//FIN DEL CASO 6
 
 		case 8:
@@ -95,7 +330,7 @@ int main()
 			break;//FIN CASO 6
 
 		default:
-			cout << "Ingresó una opción no válida dentro del rango de 1 a 5 >:(\n\n";
+			cout << "Ingresó una opción no válida dentro del rango de 1 a 7 >:(\n\n";
 			break;//FIN DEL CASO DEFAULT
 
 		}//FIN DEL SWITCH
@@ -109,8 +344,17 @@ int main()
 		cout << "6. Cargar Contactos\n\n";
 		cout << "7. Salir\n";
 		cout << "Ingrese opción que desea efectuar. :)\n";
-		cin >> opcion;
+		getline(cin, e);
+		c = entrada_num_valida(e);
+		while (!c)
+		{
+			cout << "Entrada debe ser un número entero, intente nuevamente. :(\n";
+			cout << "Ingrese opción que desea efectuar. :)\n";
+			getline(cin, e);
+			c = entrada_num_valida(e);
+		}
+		opcion = stoi(e);
 
 	}//FIN DEL WHILE
-
+	agenda.guardarArchivo();
 }

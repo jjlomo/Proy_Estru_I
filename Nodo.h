@@ -6,6 +6,7 @@ class Nodo{
 	Nodo* pred = nullptr;
 public:
 	Nodo(Contacto* p);
+	Nodo();
 	Contacto* getContacto();
 	Nodo* getNext();
 	Nodo* getPred();

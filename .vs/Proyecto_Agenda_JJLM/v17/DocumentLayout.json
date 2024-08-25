@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Proyecto_Agenda_JJLM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Proyecto_Agenda_JJLM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Lista.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Lista.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,24 +15,20 @@
       "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Lista.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Proyecto_Agenda_JJLM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Proyecto_Agenda_JJLM.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Contacto.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Contacto.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Contacto.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Contacto.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Nodo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Nodo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Nodo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Nodo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Nodo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Nodo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Contacto.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Contacto.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Contacto.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{43B4A92C-AFD1-4313-A435-3AE6D106BBB7}|Proyecto_Agenda_JJLM.vcxproj|solutionrelative:Contacto.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,37 +38,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Lista.cpp",
               "DocumentMoniker": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Lista.cpp",
               "RelativeDocumentMoniker": "Lista.cpp",
               "ToolTip": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Lista.cpp",
               "RelativeToolTip": "Lista.cpp",
-              "ViewState": "AQIAAG8AAAAAAAAAAAAAAHwAAAAkAAAA",
+              "ViewState": "AQIAANYAAAAAAAAAAAAUwLcAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-22T01:40:02.735Z",
+              "WhenOpened": "2024-08-25T03:34:42.472Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Lista.h",
               "DocumentMoniker": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Lista.h",
               "RelativeDocumentMoniker": "Lista.h",
               "ToolTip": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Lista.h",
               "RelativeToolTip": "Lista.h",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAUAAAASAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABcAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-08-22T00:56:26.751Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Contacto.cpp",
               "DocumentMoniker": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Contacto.cpp",
               "RelativeDocumentMoniker": "Contacto.cpp",
@@ -81,51 +81,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Contacto.h",
               "DocumentMoniker": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Contacto.h",
               "RelativeDocumentMoniker": "Contacto.h",
               "ToolTip": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Contacto.h",
               "RelativeToolTip": "Contacto.h",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-08-22T00:55:19.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Nodo.cpp",
               "DocumentMoniker": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Nodo.cpp",
               "RelativeDocumentMoniker": "Nodo.cpp",
               "ToolTip": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Nodo.cpp",
               "RelativeToolTip": "Nodo.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-08-22T01:25:25.532Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Nodo.h",
               "DocumentMoniker": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Nodo.h",
               "RelativeDocumentMoniker": "Nodo.h",
               "ToolTip": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Nodo.h",
               "RelativeToolTip": "Nodo.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAATAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-22T00:56:12.885Z"
+              "WhenOpened": "2024-08-22T00:56:12.885Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Proyecto_Agenda_JJLM.cpp",
               "DocumentMoniker": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Proyecto_Agenda_JJLM.cpp",
               "RelativeDocumentMoniker": "Proyecto_Agenda_JJLM.cpp",
               "ToolTip": "C:\\Users\\jjlm1\\OneDrive\\Escritorio\\Proyecto_Agenda_JJLM\\Proyecto_Agenda_JJLM.cpp",
               "RelativeToolTip": "Proyecto_Agenda_JJLM.cpp",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAAAFUAAAAbAAAA",
+              "ViewState": "AQIAAKwAAAAAAAAAAAAUwAsBAABmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-08-22T00:31:44.481Z",
               "EditorCaption": ""
