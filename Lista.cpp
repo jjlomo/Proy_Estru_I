@@ -1,6 +1,7 @@
 #include "Lista.h"
 
 Lista::Lista(){
+    cargarFlag();
     cargarArchivo();
 }
 
@@ -606,4 +607,31 @@ void Lista::setFlag(int f){
 int Lista::getFlag()
 {
     return flag;
+}
+
+void Lista::guardarFlag(){
+    string nombreArchivo = "Flag.txt";
+    ofstream archivo(nombreArchivo);
+    if (archivo.is_open()) {
+        archivo << flag << ',';
+        archivo.close();
+    }
+    else {
+        cerr << "Error al abrir el archivo." << endl;
+    }
+}
+
+void Lista::cargarFlag(){
+    string nombreArchivo = "Flag.txt";
+    ifstream archivo(nombreArchivo);
+    string linea = "";
+    if (archivo.is_open()) {
+        while (getline(archivo, linea, ',')) {
+            flag = stoi(linea);
+        }
+        archivo.close();
+    }
+    else {
+        cerr << "No se pudo abrir el archivo " << nombreArchivo << endl;
+    }
 }

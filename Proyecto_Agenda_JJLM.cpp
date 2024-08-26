@@ -64,8 +64,7 @@ int main(){
 	cout << "2. Editar Contacto\n";
 	cout << "3. Eliminar Contacto\n";
 	cout << "4. Buscar Contacto\n";
-	cout << "5. Guardar Contactos\n";
-	cout << "6. Cargar Contactos\n\n";
+	cout << "5. Guardar Contactos\n\n";
 	cout << "7. Salir\n\n";
 	cout << "Contactos guardados actualmente: " << agenda.getSize()<<"\n\n";
 	cout << "Ingrese opción que desea efectuar. :)\n";
@@ -112,7 +111,7 @@ int main(){
 			while (agenda.Busqueda(x) != nullptr)
 			{
 				cout << "El nuevo DNI ya se encuentra registrado\n";
-				cout << "Ingrese sus apellidos: ";
+				cout << "Ingrese su número de identificación (Los 13 dígitos sin espacios ni guiones): ";
 				getline(cin, x);
 				valido = dni_valido(x);
 				while (!valido)
@@ -594,7 +593,7 @@ int main(){
 					else {
 						cout << "El número ingresado fue equivocado o no existe tal contacto registrado con ese número\n\n";
 					}
-
+					agenda.MergeSort();
 				}
 				else if (buscar == 3)
 				{
@@ -946,6 +945,7 @@ int main(){
 					else {
 						cout << "El DNI ingresado fue equivocado o no existe tal contacto registrado con ese DNI\n\n";
 					}
+					agenda.MergeSort();
 				}
 				else if (buscar == 2)
 				{
@@ -1297,6 +1297,7 @@ int main(){
 					else {
 						cout << "El Apellido ingresado fue equivocado o no existe tal contacto registrado con esos Apellidos\n\n";
 					}
+					agenda.Bubble();
 				}
 				else {
 					cout << "Ya me cansé de decirte que elijas bien tu opción  D:<\n\n";
@@ -1322,11 +1323,9 @@ int main(){
 				buscar = stoi(e);
 				
 			}
-			cout << "Aca" << endl;
 			break;//FIN DEL CASO 2 EDITAR
 
 		case 3:
-			wanted = new Nodo();
 			cout << "1. Teléfono\n";
 			cout << "2. DNI\n";
 			cout << "3. Apellidos\n\n";
@@ -1607,9 +1606,9 @@ int main(){
 			agenda.guardarArchivo();
 			break;//FIN DEL CASO 5
 
-		case 6:
-			agenda.cargarArchivo();
-			break;//FIN DEL CASO 6
+		//case 6:
+		//	agenda.cargarArchivo();
+		//	break;//FIN DEL CASO 6
 
 		case 8:
 			agenda.Impresion();
@@ -1626,8 +1625,7 @@ int main(){
 		cout << "2. Editar Contacto\n";
 		cout << "3. Eliminar Contacto\n";
 		cout << "4. Buscar Contacto\n";
-		cout << "5. Guardar Contactos\n";
-		cout << "6. Cargar Contactos\n\n";
+		cout << "5. Guardar Contactos\n\n";
 		cout << "7. Salir\n";
 		cout << "Ingrese opción que desea efectuar. :)\n";
 		getline(cin, e);
@@ -1644,5 +1642,6 @@ int main(){
 	}//FIN DEL WHILE
 	
 	agenda.guardarArchivo();
+	agenda.guardarFlag();
 }
 

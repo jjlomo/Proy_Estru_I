@@ -27,5 +27,7 @@ public:
 	void MergeSort();
 	void setFlag(int f);
 	int getFlag();
+	void guardarFlag();
+	void cargarFlag();
 };
 
