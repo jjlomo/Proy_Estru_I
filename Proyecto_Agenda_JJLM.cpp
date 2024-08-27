@@ -64,7 +64,8 @@ int main(){
 	cout << "2. Editar Contacto\n";
 	cout << "3. Eliminar Contacto\n";
 	cout << "4. Buscar Contacto\n";
-	cout << "5. Guardar Contactos\n\n";
+	cout << "5. Guardar Contactos\n";
+	cout << "6. Listar Contactos\n\n";
 	cout << "7. Salir\n\n";
 	cout << "Contactos guardados actualmente: " << agenda.getSize()<<"\n\n";
 	cout << "Ingrese opción que desea efectuar. :)\n";
@@ -594,6 +595,8 @@ int main(){
 						cout << "El número ingresado fue equivocado o no existe tal contacto registrado con ese número\n\n";
 					}
 					agenda.MergeSort();
+					agenda.guardarArchivo();
+					agenda.guardarFlag();
 				}
 				else if (buscar == 3)
 				{
@@ -946,6 +949,8 @@ int main(){
 						cout << "El DNI ingresado fue equivocado o no existe tal contacto registrado con ese DNI\n\n";
 					}
 					agenda.MergeSort();
+					agenda.guardarArchivo();
+					agenda.guardarFlag();
 				}
 				else if (buscar == 2)
 				{
@@ -1298,6 +1303,8 @@ int main(){
 						cout << "El Apellido ingresado fue equivocado o no existe tal contacto registrado con esos Apellidos\n\n";
 					}
 					agenda.Bubble();
+					agenda.guardarArchivo();
+					agenda.guardarFlag();
 				}
 				else {
 					cout << "Ya me cansé de decirte que elijas bien tu opción  D:<\n\n";
@@ -1372,6 +1379,8 @@ int main(){
 						cout << "Teléfono Móvil: " << wanted->getContacto()->getTelefono() << "\n";
 						cout << "Teléfono Residencial: " << wanted->getContacto()->getResidencia() << "\n\n";
 						agenda.Eliminar(x);
+						agenda.guardarArchivo();
+						agenda.guardarFlag();
 					}
 					else {
 						cout << "El número ingresado fue equivocado o no existe tal contacto registrado con ese número\n\n";
@@ -1404,6 +1413,8 @@ int main(){
 						cout << "Teléfono Móvil: " << wanted->getContacto()->getTelefono() << "\n";
 						cout << "Teléfono Residencial: " << wanted->getContacto()->getResidencia() << "\n\n";
 						agenda.Eliminar(x);
+						agenda.guardarArchivo();
+						agenda.guardarFlag();
 					}
 					else {
 						cout << "El DNI ingresado fue equivocado o no existe tal contacto registrado con ese DNI\n\n";
@@ -1435,6 +1446,8 @@ int main(){
 						cout << "Teléfono Móvil: " << wanted->getContacto()->getTelefono() << "\n";
 						cout << "Teléfono Residencial: " << wanted->getContacto()->getResidencia() << "\n\n";
 						agenda.Eliminar(x);
+						agenda.guardarArchivo();
+						agenda.guardarFlag();
 					}
 					else {
 						cout << "El Apellido ingresado fue equivocado o no existe tal contacto registrado con esos Apellidos\n\n";
@@ -1604,13 +1617,11 @@ int main(){
 
 		case 5:
 			agenda.guardarArchivo();
+			agenda.guardarFlag();
 			break;//FIN DEL CASO 5
 
-		//case 6:
-		//	agenda.cargarArchivo();
-		//	break;//FIN DEL CASO 6
 
-		case 8:
+		case 6:
 			agenda.Impresion();
 			break;//FIN CASO 6
 
@@ -1625,7 +1636,8 @@ int main(){
 		cout << "2. Editar Contacto\n";
 		cout << "3. Eliminar Contacto\n";
 		cout << "4. Buscar Contacto\n";
-		cout << "5. Guardar Contactos\n\n";
+		cout << "5. Guardar Contactos\n";
+		cout << "6. Listar Contactos\n\n";
 		cout << "7. Salir\n";
 		cout << "Ingrese opción que desea efectuar. :)\n";
 		getline(cin, e);

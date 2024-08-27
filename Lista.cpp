@@ -193,8 +193,13 @@ void Lista::Impresion(){
 void Lista::Eliminar(string campo){
     Nodo* elim = Busqueda(campo);
     if (elim!=nullptr){
-        if (elim->getPred() == NULL)
+        if (elim->getPred() == NULL && elim->getNext() == NULL )
         {
+            //elim->getNext()->setPred(NULL);
+            *head = NULL;
+            delete elim;
+        }
+        else if (elim->getPred() == NULL && elim->getNext() != NULL) {
             elim->getNext()->setPred(NULL);
             *head = elim->getNext();
             delete elim;
